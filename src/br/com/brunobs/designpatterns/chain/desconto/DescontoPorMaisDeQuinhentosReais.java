@@ -8,7 +8,9 @@ public class DescontoPorMaisDeQuinhentosReais implements Desconto {
 	}
 
 	public double descontar(Orcamento orcamento){
-          if(orcamento.getValor() > 500) {
+		if(orcamento.getValor() > 500) {
+			System.out.println(this.getClass().getSimpleName());
+			
             return orcamento.getValor() * 0.07;
           }
           else {
