@@ -1,4 +1,4 @@
-package br.com.brunobs.designpatterns.strategy.investimento;
+package br.com.brunobs.designpatterns.templateMethod.relatorio;
 
 import java.math.BigDecimal;
 

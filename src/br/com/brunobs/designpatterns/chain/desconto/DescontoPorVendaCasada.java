@@ -1,24 +1,15 @@
 package br.com.brunobs.designpatterns.chain.desconto;
 
-public class DescontoPorVendaCasada implements Desconto {
-	private Desconto proximo;
+public class DescontoPorVendaCasada extends DescontoTamplateMethod {
 
-	public void setProximo(Desconto proximo) {
-
-		this.proximo = proximo;
+	@Override
+	public double valorDesconto(Orcamento orcamento) {
+		return orcamento.getValor() * 0.05;
 	}
 
-	public double descontar(Orcamento orcamento) {
-		if (existe("CANETA", orcamento) && existe("LAPIS", orcamento)) {
-			System.out.println(this.getClass().getSimpleName());
-
-			return orcamento.getValor() * 0.05;
-		} else {
-			if (this.proximo != null) {
-				return proximo.descontar(orcamento);
-			}
-			return 0;
-		}
+	@Override
+	public boolean temDesconto(Orcamento orcamento) {
+		return existe("CANETA", orcamento) && existe("LAPIS", orcamento);
 	}
 
 	private boolean existe(String nomeDoItem, Orcamento orcamento) {
@@ -28,5 +19,6 @@ public class DescontoPorVendaCasada implements Desconto {
 		}
 		return false;
 	}
+
 
 }

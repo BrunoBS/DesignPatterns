@@ -1,19 +1,15 @@
 package br.com.brunobs.designpatterns.chain.desconto;
 
-public class DescontoPorCincoItens implements Desconto {
-	private Desconto proximo;
+public class DescontoPorCincoItens extends DescontoTamplateMethod {
 
-	public void setProximo(Desconto proximo) {
-		this.proximo = proximo;
+	@Override
+	public double valorDesconto(Orcamento orcamento) {
+		return orcamento.getValor() * 0.1;
 	}
 
-	public double descontar(Orcamento orcamento) {
-		if (orcamento.getItens().size() > 5) {
-			System.out.println(this.getClass().getSimpleName());
-			return orcamento.getValor() * 0.1;
-		} else {
-			return proximo.descontar(orcamento);
-		}
+	@Override
+	public boolean temDesconto(Orcamento orcamento) {
+		return orcamento.getItens().size() > 5;
 	}
 
 }
