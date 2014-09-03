@@ -5,7 +5,6 @@ public abstract class Imposto {
 	protected Imposto imposto;
 
 	public Imposto(Imposto imposto) {
-		super();
 		this.imposto = imposto;
 	}
 
