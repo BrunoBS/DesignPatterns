@@ -16,10 +16,10 @@ public class TestaImpostoComplexo {
 		System.out.println(valor);
 
 		Imposto impostoMuitoAlto = new ImpostoMuitoAlto();
-		// impostoMuitoAlto = new ICMS(impostoMuitoAlto);
-		// impostoMuitoAlto = new ISS(impostoMuitoAlto);
-		// impostoMuitoAlto = new ICPP(impostoMuitoAlto);
-		 impostoMuitoAlto = new IKCV(impostoMuitoAlto);
+		impostoMuitoAlto = new ICMS(impostoMuitoAlto);
+		impostoMuitoAlto = new ISS(impostoMuitoAlto);
+		impostoMuitoAlto = new ICPP(impostoMuitoAlto);
+		impostoMuitoAlto = new IKCV(impostoMuitoAlto);
 		valor = impostoMuitoAlto.calcula(orcamento);
 		System.out.println(valor);
 	}
