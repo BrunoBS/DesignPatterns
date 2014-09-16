@@ -39,3 +39,4 @@ Icon
 *.classpath
 *.prefs
 *.project
+/bin/
